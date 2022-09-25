@@ -14,15 +14,12 @@ const childProc = require('child_process');
 
 		if (editor) {
 			let document = editor.document.fileName;
-			if(!document.toLowerCase().endsWith(".linq")){
-				vscode.window.showErrorMessage('Can\'t convert to .NET Notebook - this is not a .linq file');
-				return;
-			}
-			//console.log(document);
 
-			const pathToExe = context.asAbsolutePath("exes/Convert2dnn.Console.exe");
+			console.log(document);
 
-			const res = childProc.execFileSync(pathToExe, [document]);
+			const pathToExe = context.asAbsolutePath("exes/Convert2dnn.Console.dll");
+
+			const res = childProc.execFileSync("dotnet", [pathToExe, document]);
 			console.log("Convert2dnn status: " + res.toString());
 
 			var notebookPath = document.replace(".linq",".ipynb");
