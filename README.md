@@ -26,7 +26,12 @@ None
 
 ## Release Notes
 
-### 1.0.0
+### 0.0.2
+
+Now working in Linux (using dotnet as the launch executable)
+
+
+### 0.0.1
 
 Initial release
 
