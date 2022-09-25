@@ -8,7 +8,7 @@ const childProc = require('child_process');
 
 	//	console.log("activate called ");
 
-	let disposable = vscode.commands.registerCommand('convert2dnn.convert2DotNetNotebook', 
+	let disposable = vscode.commands.registerCommand('linqpad2dnn.convert2DotNetNotebook', 
 	async function () {
 		const editor = vscode.window.activeTextEditor;
 
@@ -20,7 +20,7 @@ const childProc = require('child_process');
 			const pathToExe = context.asAbsolutePath("exes/Convert2dnn.Console.dll");
 
 			const res = childProc.execFileSync("dotnet", [pathToExe, document]);
-			console.log("Convert2dnn status: " + res.toString());
+			console.log("linqpad2dnn status: " + res.toString());
 
 			var notebookPath = document.replace(".linq",".ipynb");
 

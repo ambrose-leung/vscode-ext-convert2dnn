@@ -1,6 +1,7 @@
 {
-  "name": "convert2dnn",
-  "displayName": "LinqPad Sript to .NET Notebook",
+  "name": "linqpad2dnn",
+  "displayName": "LinqPad Script to .NET Notebook",
+  "publisher": "ambroseleung",
   "description": "",
   "version": "0.0.1",
   "engines": {
@@ -10,7 +11,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:convert2dnn.convert2DotNetNotebook"
+    "onCommand:linqpad2dnn.convert2DotNetNotebook"
   ],
   "main": "./extension.js",
   "contributes": {
@@ -19,20 +20,20 @@
       "commandPalette": [
         {
           "comment":"when clauses: https://code.visualstudio.com/api/references/when-clause-contexts",
-          "command": "convert2dnn.convert2DotNetNotebook",
+          "command": "linqpad2dnn.convert2DotNetNotebook",
           "when": "resourceExtname == .linq"
         }
       ],
       "editor/context": [
         {
-          "command": "convert2dnn.convert2DotNetNotebook",
+          "command": "linqpad2dnn.convert2DotNetNotebook",
           "when": "resourceExtname == .linq"
         }
       ]
     },
     "commands": [
       {
-        "command": "convert2dnn.convert2DotNetNotebook",
+        "command": "linqpad2dnn.convert2DotNetNotebook",
         "title": "Convert to .NET Interactive Notebook (.ipynb)"
       }
     ]
@@ -54,7 +55,9 @@
     "@vscode/test-electron": "^2.1.5"
   },
   "dependencies": {
-    "axios": "^0.27.2",
-    "fast-xml-parser": "^3.21.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ambrose-leung/vscode-ext-convert2dnn.git"
   }
 }
